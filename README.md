@@ -2,141 +2,224 @@
 
 # 💳 Payment Gateway System
 
-### 🚀 A Scalable Low-Level Design (LLD) Project in Modern C++
+### 🚀 Enterprise-Grade Payment Gateway Architecture in Modern C++
 
-*Designed using SOLID Principles & Industry-Standard Design Patterns*
+<img src="https://readme-typing-svg.demolab.com?font=Poppins&weight=700&size=24&duration=3000&pause=1000&color=00C2FF&center=true&vCenter=true&width=700&lines=Low+Level+Design+(LLD);Scalable+Payment+Architecture;SOLID+Principles;Design+Patterns;Modern+C%2B%2B+Project" />
+
+<br>
 
 <p>
 
-<img src="https://img.shields.io/badge/C%2B%2B-17-blue?style=for-the-badge&logo=c%2B%2B">
+<img src="https://img.shields.io/badge/C++-17-00599C?style=for-the-badge&logo=cplusplus&logoColor=white"/>
 
-<img src="https://img.shields.io/badge/Low--Level-Design-success?style=for-the-badge">
+<img src="https://img.shields.io/badge/OOP-Architecture-orange?style=for-the-badge"/>
 
-<img src="https://img.shields.io/badge/OOP-Architecture-orange?style=for-the-badge">
+<img src="https://img.shields.io/badge/Low_Level_Design-LLD-success?style=for-the-badge"/>
 
-<img src="https://img.shields.io/badge/Design%20Patterns-5-red?style=for-the-badge">
+<img src="https://img.shields.io/badge/SOLID-Principles-red?style=for-the-badge"/>
+
+<img src="https://img.shields.io/badge/Design_Patterns-5-blueviolet?style=for-the-badge"/>
 
 </p>
 
 ---
 
-*A modular payment gateway simulation supporting multiple payment providers through extensible architecture and clean object-oriented design.*
+### ⭐ A production-inspired payment gateway simulator implementing scalable software architecture using modern C++.
 
 </div>
 
 ---
 
-# 🌟 Overview
+# 📖 Overview
 
-This project simulates how modern payment gateway platforms such as **Paytm**, **Razorpay**, and future providers process online payments.
+Building a payment gateway is more than processing transactions—it requires scalability, extensibility, maintainability, and clean architecture.
 
-The architecture is designed to be **scalable**, **maintainable**, and **extensible**, allowing new payment providers to be integrated with minimal code changes.
+This project demonstrates how real-world payment systems can be designed using **Object-Oriented Programming**, **Low-Level Design**, and **industry-standard Design Patterns**.
 
-Instead of writing a monolithic payment processor, this project follows **real-world software engineering practices** by separating responsibilities into independent components.
-
----
-
-# ✨ Highlights
-
-✅ Multiple Payment Providers
-
-✅ Factory-based Gateway Selection
-
-✅ Standardized Payment Flow
-
-✅ Retry Mechanism (Proxy)
-
-✅ Clean Object-Oriented Design
-
-✅ SOLID Principles
-
-✅ Highly Extensible Architecture
-
-✅ Real-world Low-Level Design
+The architecture is built so that new payment providers can be integrated **without modifying existing business logic**, following the **Open-Closed Principle (SOLID)**.
 
 ---
 
-# 🏛 System Architecture
+# 🎯 Project Highlights
+
+<table>
+<tr>
+
+<td align="center">
+
+### 💳
+
+Multiple Providers
+
+</td>
+
+<td align="center">
+
+### 🏭
+
+Factory Pattern
+
+</td>
+
+<td align="center">
+
+### 🛡
+
+Retry Proxy
+
+</td>
+
+<td align="center">
+
+### 🔒
+
+Singleton Services
+
+</td>
+
+</tr>
+
+<tr>
+
+<td align="center">
+
+### 🎯
+
+Strategy Pattern
+
+</td>
+
+<td align="center">
+
+### 🧠
+
+SOLID Principles
+
+</td>
+
+<td align="center">
+
+### ⚡
+
+Extensible
+
+</td>
+
+<td align="center">
+
+### 🚀
+
+LLD Architecture
+
+</td>
+
+</tr>
+
+</table>
+
+---
+
+# 🏛️ System Architecture
 
 <p align="center">
 
-<img src="images/uml.png" width="100%">
+<img src="images/uml.png" width="100%"/>
 
 </p>
 
 ---
 
-# 📋 Requirements
+# 📋 Functional Requirements
 
 <p align="center">
 
-<img src="images/requirements.png" width="85%">
+<img src="images/requirements.png" width="90%"/>
 
 </p>
 
 ---
 
-# ⚙️ Payment Workflow
+# ⚙️ Payment Processing Flow
 
 ```text
-                User
-                  │
-                  ▼
-        Payment Controller
-                  │
-                  ▼
-         Payment Service
-                  │
-                  ▼
-         Gateway Factory
-                  │
-       ┌──────────┴──────────┐
-       │                     │
-       ▼                     ▼
-   Paytm Gateway      Razorpay Gateway
-       │                     │
-       ▼                     ▼
- Banking System      Banking System
-       │                     │
-       └──────────┬──────────┘
-                  ▼
+                 User
+
+                   │
+
+                   ▼
+
+         Payment Controller
+
+                   │
+
+                   ▼
+
+          Payment Service
+
+                   │
+
+                   ▼
+
+           Gateway Factory
+
+          ┌────────┴────────┐
+
+          ▼                 ▼
+
+     Paytm Gateway     Razorpay Gateway
+
+          │                 │
+
+          ▼                 ▼
+
+      Banking API      Banking API
+
+          │                 │
+
+          └────────┬────────┘
+
+                   ▼
+
           Payment Confirmation
-                  │
-                  ▼
-           Success / Failure
+
+                   │
+
+                   ▼
+
+             Success / Failure
 ```
 
 ---
 
-# 🧩 Design Patterns
+# 🧩 Design Patterns Used
 
-| Pattern | Purpose |
-|----------|----------|
-| 🏭 Factory | Creates the appropriate payment gateway |
-| 🎯 Strategy | Supports multiple payment providers |
-| 🔒 Singleton | Ensures a single shared instance |
-| 🛡 Proxy | Implements retry mechanism |
-| 📝 Template Method | Standardizes payment workflow |
+| Pattern | Why? |
+|----------|------|
+| 🏭 Factory | Creates payment gateway dynamically |
+| 🎯 Strategy | Different gateway implementations |
+| 🛡 Proxy | Retry mechanism |
+| 🔒 Singleton | Shared services |
+| 📋 Template Method | Standard payment lifecycle |
 
 ---
 
-# 📂 Project Structure
+# 📂 Repository Structure
 
 ```text
 PaymentGatewayApplication
 │
+├── images
+│   ├── uml.png
+│   └── requirements.png
+│
 ├── PaymentGatewayApplication.cpp
 ├── README.md
-├── .gitignore
-│
-└── images
-      ├── uml.png
-      └── requirements.png
+└── .gitignore
 ```
 
 ---
 
-# 🚀 Supported Providers
+# 🚀 Supported Payment Providers
 
 | Gateway | Status |
 |----------|--------|
@@ -147,113 +230,97 @@ PaymentGatewayApplication
 
 ---
 
-# 🎯 SOLID Principles Applied
+# 🏗️ Architecture Principles
 
-✔ Single Responsibility Principle
+✔ SOLID Principles
 
-✔ Open-Closed Principle
+✔ Separation of Concerns
 
-✔ Liskov Substitution Principle
+✔ Dependency Inversion
 
-✔ Interface Segregation Principle
+✔ Composition over Inheritance
 
-✔ Dependency Inversion Principle
+✔ Low Coupling
+
+✔ High Cohesion
+
+✔ Extensibility
 
 ---
 
-# 💡 OOP Concepts Used
+# 💡 OOP Concepts Demonstrated
 
 - Encapsulation
 - Abstraction
 - Inheritance
 - Polymorphism
 - Composition
-- Dependency Injection
 
 ---
 
-# 🔄 Payment Lifecycle
+# 📈 Why This Architecture?
 
-```text
-Validate Payment
-        │
-        ▼
-Initialize Transaction
-        │
-        ▼
-Gateway Processing
-        │
-        ▼
-Bank Processing
-        │
-        ▼
-Confirmation
-        │
-        ▼
-Transaction Complete
-```
+✅ Easy to maintain
+
+✅ Easy to test
+
+✅ Easily extendable
+
+✅ Production-inspired architecture
+
+✅ No business logic duplication
+
+✅ Follows software engineering best practices
 
 ---
 
-# 📈 Extensibility
+# 🛠️ Technologies
 
-Adding a new payment provider requires only:
-
-```text
-✔ Create a new Banking System
-
-✔ Create a new Payment Gateway
-
-✔ Register it inside GatewayFactory
-
-✔ No changes to existing business logic
-```
-
-This follows the **Open-Closed Principle**, making the architecture easy to scale.
+| Category | Technology |
+|----------|------------|
+| Language | C++17 |
+| Concepts | OOP |
+| Design | Low-Level Design |
+| Patterns | Factory, Strategy, Singleton, Proxy, Template Method |
 
 ---
 
-# 🛠 Tech Stack
-
-| Technology | Usage |
-|------------|------|
-| C++17 | Core Language |
-| OOP | Software Design |
-| LLD | Architecture |
-| Design Patterns | Scalability |
-
----
-
-# 🔮 Future Improvements
+# 🔮 Future Enhancements
 
 - Stripe Integration
 - PayPal Integration
-- UPI Support
-- Wallet Support
-- Subscription Payments
+- UPI Gateway
+- Wallet Payments
+- Subscription Billing
 - Payment Analytics
 - Transaction History
-- Database Integration
-- REST API
+- Database Support
+- REST APIs
 - Unit Testing
-- Docker Support
+- Docker
 - CI/CD Pipeline
 
 ---
 
 # 🎓 Learning Outcomes
 
-This project demonstrates practical understanding of:
+This project demonstrates practical understanding of
 
+- Software Architecture
 - Low-Level Design
 - Object-Oriented Programming
-- Software Architecture
 - SOLID Principles
-- Factory Pattern
-- Strategy Pattern
-- Singleton Pattern
-- Proxy Pattern
-- Template Method Pattern
+- Scalable System Design
+- Enterprise Code Organization
+- Design Patterns
+
+---
+
+# 🤝 Contributing
+
+Contributions, feature requests, and suggestions are welcome.
+
+Feel free to fork the repository and submit a Pull Request.
 
 ---
 
@@ -261,16 +328,18 @@ This project demonstrates practical understanding of:
 
 ## Manav Redhu
 
-**B.Tech — Artificial Intelligence & Data Science**
+**B.Tech – Artificial Intelligence & Data Science**
 
-🌐 GitHub: https://github.com/manavredhu
+🌐 GitHub
+
+https://github.com/manavredhu
 
 ---
 
 <div align="center">
 
-### ⭐ If you found this project interesting, consider giving it a Star!
+## ⭐ If you found this repository useful, consider giving it a star.
 
-*"Good software architecture is built by design, not by accident."*
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:00C2FF,100:0066FF&height=120&section=footer"/>
 
 </div>
