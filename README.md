@@ -1,116 +1,276 @@
+<div align="center">
+
 # 💳 Payment Gateway System
 
-A scalable **Payment Gateway System** developed in **C++** following **Low-Level Design (LLD)** principles and industry-standard design patterns.
+### 🚀 A Scalable Low-Level Design (LLD) Project in Modern C++
+
+*Designed using SOLID Principles & Industry-Standard Design Patterns*
+
+<p>
+
+<img src="https://img.shields.io/badge/C%2B%2B-17-blue?style=for-the-badge&logo=c%2B%2B">
+
+<img src="https://img.shields.io/badge/Low--Level-Design-success?style=for-the-badge">
+
+<img src="https://img.shields.io/badge/OOP-Architecture-orange?style=for-the-badge">
+
+<img src="https://img.shields.io/badge/Design%20Patterns-5-red?style=for-the-badge">
+
+</p>
 
 ---
 
-# 🚀 Features
+*A modular payment gateway simulation supporting multiple payment providers through extensible architecture and clean object-oriented design.*
 
-- Multiple Payment Providers
-- Paytm Integration
-- Razorpay Integration
-- Gateway Factory
-- Payment Validation
-- Retry Mechanism
-- Extensible Architecture
-- SOLID Principles
-- Clean OOP Design
+</div>
 
 ---
 
-# 🏛 Architecture
+# 🌟 Overview
 
-![Architecture](images/uml.png)
+This project simulates how modern payment gateway platforms such as **Paytm**, **Razorpay**, and future providers process online payments.
+
+The architecture is designed to be **scalable**, **maintainable**, and **extensible**, allowing new payment providers to be integrated with minimal code changes.
+
+Instead of writing a monolithic payment processor, this project follows **real-world software engineering practices** by separating responsibilities into independent components.
+
+---
+
+# ✨ Highlights
+
+✅ Multiple Payment Providers
+
+✅ Factory-based Gateway Selection
+
+✅ Standardized Payment Flow
+
+✅ Retry Mechanism (Proxy)
+
+✅ Clean Object-Oriented Design
+
+✅ SOLID Principles
+
+✅ Highly Extensible Architecture
+
+✅ Real-world Low-Level Design
+
+---
+
+# 🏛 System Architecture
+
+<p align="center">
+
+<img src="images/uml.png" width="100%">
+
+</p>
 
 ---
 
 # 📋 Requirements
 
-![Requirements](images/requirements.png)
+<p align="center">
+
+<img src="images/requirements.png" width="85%">
+
+</p>
 
 ---
 
-# 🧩 Design Patterns Used
-
-| Pattern | Purpose |
-|----------|---------|
-| Factory | Creates payment gateways |
-| Strategy | Different payment providers |
-| Singleton | Single instances |
-| Proxy | Retry mechanism |
-| Template Method | Standard payment flow |
-
----
-
-# 📂 Folder Structure
+# ⚙️ Payment Workflow
 
 ```text
-PaymentGatewayApplication/
+                User
+                  │
+                  ▼
+        Payment Controller
+                  │
+                  ▼
+         Payment Service
+                  │
+                  ▼
+         Gateway Factory
+                  │
+       ┌──────────┴──────────┐
+       │                     │
+       ▼                     ▼
+   Paytm Gateway      Razorpay Gateway
+       │                     │
+       ▼                     ▼
+ Banking System      Banking System
+       │                     │
+       └──────────┬──────────┘
+                  ▼
+          Payment Confirmation
+                  │
+                  ▼
+           Success / Failure
+```
+
+---
+
+# 🧩 Design Patterns
+
+| Pattern | Purpose |
+|----------|----------|
+| 🏭 Factory | Creates the appropriate payment gateway |
+| 🎯 Strategy | Supports multiple payment providers |
+| 🔒 Singleton | Ensures a single shared instance |
+| 🛡 Proxy | Implements retry mechanism |
+| 📝 Template Method | Standardizes payment workflow |
+
+---
+
+# 📂 Project Structure
+
+```text
+PaymentGatewayApplication
 │
 ├── PaymentGatewayApplication.cpp
 ├── README.md
 ├── .gitignore
+│
 └── images
-    ├── uml.png
-    └── requirements.png
+      ├── uml.png
+      └── requirements.png
 ```
 
 ---
 
-# ⚙ Payment Flow
+# 🚀 Supported Providers
+
+| Gateway | Status |
+|----------|--------|
+| ✅ Paytm | Supported |
+| ✅ Razorpay | Supported |
+| ⏳ Stripe | Planned |
+| ⏳ PayPal | Planned |
+
+---
+
+# 🎯 SOLID Principles Applied
+
+✔ Single Responsibility Principle
+
+✔ Open-Closed Principle
+
+✔ Liskov Substitution Principle
+
+✔ Interface Segregation Principle
+
+✔ Dependency Inversion Principle
+
+---
+
+# 💡 OOP Concepts Used
+
+- Encapsulation
+- Abstraction
+- Inheritance
+- Polymorphism
+- Composition
+- Dependency Injection
+
+---
+
+# 🔄 Payment Lifecycle
 
 ```text
-User
-  │
-  ▼
-Payment Controller
-  │
-  ▼
-Payment Service
-  │
-  ▼
-Gateway Factory
-  │
-  ▼
-Payment Gateway
-  │
-  ▼
-Banking System
-  │
-  ▼
-Payment Success
+Validate Payment
+        │
+        ▼
+Initialize Transaction
+        │
+        ▼
+Gateway Processing
+        │
+        ▼
+Bank Processing
+        │
+        ▼
+Confirmation
+        │
+        ▼
+Transaction Complete
 ```
 
 ---
 
-# 🛠 Technologies
+# 📈 Extensibility
 
-- C++
-- OOP
-- Low Level Design
-- Design Patterns
+Adding a new payment provider requires only:
+
+```text
+✔ Create a new Banking System
+
+✔ Create a new Payment Gateway
+
+✔ Register it inside GatewayFactory
+
+✔ No changes to existing business logic
+```
+
+This follows the **Open-Closed Principle**, making the architecture easy to scale.
 
 ---
 
-# 🎯 Future Scope
+# 🛠 Tech Stack
 
-- Stripe
-- PayPal
-- UPI
+| Technology | Usage |
+|------------|------|
+| C++17 | Core Language |
+| OOP | Software Design |
+| LLD | Architecture |
+| Design Patterns | Scalability |
+
+---
+
+# 🔮 Future Improvements
+
+- Stripe Integration
+- PayPal Integration
+- UPI Support
 - Wallet Support
-- Payment Logs
+- Subscription Payments
+- Payment Analytics
+- Transaction History
 - Database Integration
+- REST API
+- Unit Testing
+- Docker Support
+- CI/CD Pipeline
+
+---
+
+# 🎓 Learning Outcomes
+
+This project demonstrates practical understanding of:
+
+- Low-Level Design
+- Object-Oriented Programming
+- Software Architecture
+- SOLID Principles
+- Factory Pattern
+- Strategy Pattern
+- Singleton Pattern
+- Proxy Pattern
+- Template Method Pattern
 
 ---
 
 # 👨‍💻 Author
 
-**Manav Redhu**
+## Manav Redhu
 
-GitHub:
-https://github.com/manavredhu
+**B.Tech — Artificial Intelligence & Data Science**
 
-⭐ Star this repository if you like it!
+🌐 GitHub: https://github.com/manavredhu
+
 ---
 
-## ⭐ If you like this project, consider giving it a Star!
+<div align="center">
+
+### ⭐ If you found this project interesting, consider giving it a Star!
+
+*"Good software architecture is built by design, not by accident."*
+
+</div>
